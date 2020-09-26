@@ -1,0 +1,55 @@
+@import '~Assets/styles/variables';
+
+.BookItem {
+  display: block;
+  border: 1px solid $grey-lighter;
+  margin-bottom: 20px;
+
+  &:hover {
+    box-shadow: 5px 5px 20px $grey-lighter;
+    color: inherit;
+    transform: scale(1.03);
+    transition: ease-in-out 0.2s;
+  }
+
+  @media (min-width: $screen-md) {
+    // tablet
+    $space:60px;
+
+    margin: 0 ($space/2) $space ($space/2);
+  }
+}
+
+.cover {
+  position: relative;
+  height: 200px;
+  background: #eee;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.content {
+  position: relative;
+  height: 120px;
+  padding: 5px 10px 10px 5px;
+}
+
+.price {
+  position: absolute;
+  right: -1px;
+  padding: 5px;
+  background: $secondary;
+  color: #fff;
+}
+
+.title {
+  margin-top: 5px;
+  font-size: 1.1em;
+}
+
+.synopsis {
+  margin-top: 10px;
+  color: #666;
+  font-size: 0.8em;
+}

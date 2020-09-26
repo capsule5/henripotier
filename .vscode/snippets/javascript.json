@@ -1,0 +1,10 @@
+{
+  "useStore": {
+    "prefix": "useStore",
+    "body": [
+      "import { useStore } from \"Store\"",
+      "const [ {${1:reducer}}, dispatch ] = useStore()"
+    ],
+    "description": "useStore"
+  }
+}

@@ -1,0 +1,43 @@
+@import '~Assets/styles/variables';
+
+.nav {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+
+  ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    margin: 0 20px;
+    color: $dark;
+    font-family: $font-semibold;
+    font-size: 1em;
+    outline: none;
+    text-decoration: none;
+
+    &:hover,
+    &.active {
+      color: $primary;
+    }
+  }
+}
+
+.burgerBtn {
+  height: 30px;
+  padding: 0;
+  border: none;
+  margin-left: 10px;
+  //width: 30px;
+  background: none;
+  font-size: 30px;
+}

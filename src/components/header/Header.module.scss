@@ -1,0 +1,64 @@
+@import '~Assets/styles/variables';
+
+.header {
+  position: relative;
+  display: flex;
+  height: 75px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 2px solid $grey-lighter;
+  background: #fff;
+
+  @media (min-width: $screen-md) {
+    // tablet
+    padding: 0 40px;
+  }
+}
+
+.left {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'BlockBe', Arial, Helvetica, sans-serif;
+  font-size: 2em;
+
+  img {
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  &:hover {
+    color: $dark;
+  }
+
+  @media (min-width: $screen-md) {
+    // tablet
+    margin-right: 50px;
+    font-size: 2.2em;
+
+    img {
+      height: 30px;
+    }
+  }
+}
+
+.right {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

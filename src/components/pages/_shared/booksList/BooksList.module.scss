@@ -1,0 +1,10 @@
+@import '~Assets/styles/variables';
+
+.BooksList {
+  @media (min-width: $screen-md) {
+    // tablet
+    $space:60px;
+
+    margin: 0 (-$space/2);
+  }
+}

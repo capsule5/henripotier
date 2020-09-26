@@ -1,0 +1,121 @@
+@import '~Assets/styles/variables';
+
+.intro {
+  padding: 20px;
+  background: url('../../../assets/harry-potter-battle-image.jpg') center left;
+  background-size: cover;
+
+  @media (min-width: $screen-md) {
+    display: flex;
+    height: 600px;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 0;
+    transform: translateY(-2px);
+  }
+}
+
+.entry {
+  padding: 20px;
+  margin: 10px;
+  background: #fff;
+
+  @media (min-width: $screen-md) {
+    // tablet
+    width: 500px;
+    padding: 40px;
+    margin-right: 40px;
+  }
+}
+
+.buttons {
+  margin-top: 20px;
+
+  [class*='cta'] {
+    margin-bottom: 10px;
+  }
+
+  .create { margin-right: 20px; }
+
+  @media (min-width: $screen-md) {
+    // tablet
+    [class*='cta'] {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.activeUsersWrapper {
+  display: flex;
+  height: 100%;
+  align-items: flex-end;
+}
+
+.activeUsers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  //justify-content: space-between;
+  padding: 0 0;
+  margin-top: 40px;
+
+  @media (min-width: $screen-md) {
+    justify-content: flex-start;
+  }
+
+  @media (min-width: $screen-lg) {
+    // tablet
+    padding-left: 60px;
+    margin-top: 0;
+  }
+}
+
+.activeUser {
+  margin: 3px;
+
+  @media (min-width: $screen-lg) {
+    // desktop
+    margin: 10px;
+  }
+}
+
+.quote {
+  display: flex;
+  height: 45px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 3px;
+  font-family: $font-bold;
+  //font-family: 'BlockBe', Arial, Helvetica, sans-serif;
+  font-size: 1.3em;
+  line-height: 1.2em;
+  //text-align: center;
+
+  @media (min-width: $screen-lg) {
+    height: 60px;
+    margin: 10px;
+  }
+}
+
+.link {
+  border-bottom: 2px solid $primary;
+  //font-family: $font-bold;
+  &:hover {
+    background: lighten($primary, 10%);
+    color: $dark;
+  }
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 45px;
+
+  @media (min-width: $screen-lg) {
+    // desktop
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+  }
+}

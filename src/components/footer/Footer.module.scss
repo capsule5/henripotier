@@ -1,0 +1,147 @@
+@import '~Assets/styles/variables';
+
+.footer {
+  width: 100%;
+  box-sizing: border-box;
+  flex: 1;
+  padding: 20px;
+  margin: auto;
+  background: $dark;
+  color: $grey;
+  font-family: 'Montserrat-SemiBold', Arial, Helvetica, sans-serif;
+  font-size: 0.8em;
+
+  @media (min-width: $screen-lg) {
+    // desktop
+    padding: 20px 0 40px 0;
+  }
+
+  h4 {
+    margin: 0;
+    font-family: 'Montserrat-Bold', Arial, Helvetica, sans-serif;
+  }
+
+  p {
+    margin: 0;
+    margin-top: 5px;
+    line-height: 25px;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+
+    li {
+      margin-top: 10px;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    @media (min-width: $screen-sm) {
+      // large mobile
+      margin-left: 40px;
+      text-align: left;
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    // tablet
+    flex-direction: row;
+    //align-items: flex-start;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (min-width: $screen-md) {
+    flex-direction: row;
+    margin: auto;
+
+    @media (min-width: $screen-sm) {
+      // large mobile
+    }
+
+    @media (min-width: $screen-md) {
+      // tablet
+      padding: 0 60px;
+      text-align: left;
+    }
+
+    @media (min-width: $screen-lg) {
+      // desktop
+    }
+
+    @media (min-width: $screen-xl) {
+      // large desktop
+    }
+  }
+}
+
+.col {
+  position: relative;
+  padding: 10px;
+
+  @media (min-width: $screen-lg) {
+    // desktop
+    padding: 40px;
+  }
+}
+
+.logoBoutch {
+  height: 90px;
+  mix-blend-mode: screen;
+
+  @media (min-width: $screen-lg) {
+    // desktop
+    height: 130px;
+  }
+
+  @media (min-width: $screen-xl) {
+    // large desktop
+  }
+}
+
+.logoLengraineur {
+  margin-bottom: 10px;
+  font-size: 0.98em;
+}
+
+// .fbShare {
+//   margin-top: 20px;
+//   //text-align: center;
+//   [class*='fb'] {
+//     display: inline-block;
+//     width: 110px;
+//   }
+// }
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.share {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+
+  button {
+    margin: 0 10px;
+  }
+}

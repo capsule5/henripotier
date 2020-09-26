@@ -1,0 +1,10 @@
+@import '~Assets/styles/variables';
+
+.SimpleLoader {
+  display: flex;
+  height: 20em;
+  align-items: center;
+  justify-content: center;
+  color: $grey-light;
+  font-size: 20px;
+}
