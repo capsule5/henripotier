@@ -23,7 +23,7 @@
       "Src/*": ["./src/*"],
       "Assets/*": ["./src/components/desktop/*"],
       "Cmp/*": ["./src/components/*"],
-      "Shared/*": ["./src/components/pages/shared/*"],
+      "Shared/*": ["./src/components/pages/_shared/*"],
       "Store/*": ["./src/store/*"],
       "Utils/*": ["./src/utils/*"]
     },

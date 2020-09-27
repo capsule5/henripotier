@@ -4,12 +4,12 @@
   display: block;
   border: 1px solid $grey-lighter;
   margin-bottom: 20px;
+  transition: ease-in-out 0.3s;
 
   &:hover {
     box-shadow: 5px 5px 20px $grey-lighter;
     color: inherit;
     transform: scale(1.03);
-    transition: ease-in-out 0.2s;
   }
 
   @media (min-width: $screen-md) {
@@ -31,8 +31,7 @@
 
 .content {
   position: relative;
-  height: 120px;
-  padding: 5px 10px 10px 5px;
+  padding: 10px;
 }
 
 .price {
@@ -44,11 +43,15 @@
 }
 
 .title {
+  overflow: hidden;
   margin-top: 5px;
   font-size: 1.1em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .synopsis {
+  height: 80px;
   margin-top: 10px;
   color: #666;
   font-size: 0.8em;

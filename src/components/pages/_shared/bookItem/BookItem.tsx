@@ -4,12 +4,13 @@ import { PATHS } from 'Src/config/nav'
 import { Link } from 'react-router-dom'
 import slugify from 'slugify'
 import { Book } from 'Src/types'
+import AddToCartBtn from 'Cmp/pages/_shared/cartBtns/AddToCartBtn'
 import styles from './BookItem.module.scss'
 
 type Props = Book
 
 const BookItem: React.FC<Props> = ({
-  isbn, title, cover, priceFmt, synopsisShort,
+  isbn, title, cover, price, priceFmt, synopsisShort,
 }) => {
   const styleCover = (() => {
     return {
@@ -19,8 +20,9 @@ const BookItem: React.FC<Props> = ({
 
 
   return (
-    <Link to={ `${PATHS.books}/${slugify(title)}` } key={ isbn } className={ `${styles.BookItem}` }>
-      <div>
+    <div key={ isbn } className={ `${styles.BookItem}` }>
+    
+      <Link to={ `${PATHS.books}/${slugify(title)}` } className="silent">
         <div className={ `${styles.cover}` } style={ styleCover }>
           <div className={ styles.price }>{ priceFmt }</div>
         </div>
@@ -32,9 +34,15 @@ const BookItem: React.FC<Props> = ({
             {synopsisShort}
           </div>
         </div>
-        {}
-      </div>
-    </Link>
+      </Link>
+      <AddToCartBtn
+        className="cta cta--grey cta--fullWidth cta--small cta--upper"
+        isbn={ isbn }
+        title={ title }
+        cover={ cover }
+        price={ price }
+      />
+    </div>
   )
 }
 

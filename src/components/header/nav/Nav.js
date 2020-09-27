@@ -1,16 +1,25 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { isWidthUp } from '@material-ui/core/withWidth'
-import { LINKS } from 'Src/config/nav'
+import { LINKS, PATHS } from 'Src/config/nav'
 import ButtonWithMenu from 'Cmp/ui/buttons/ButtonWithMenu'
 import MenuItem from '@material-ui/core/MenuItem'
 import { useMuiWidth } from 'Src/hooks/useMuiWidth'
+import { useStore } from 'Store/index'
 import styles from './Nav.module.scss'
 
 
 const Nav = () => {
+  const [ { cart: { items } } ] = useStore()
   const width = useMuiWidth()
   const { pathname } = useLocation()
+
+  const renderCartCount = () => {
+    return (
+      <span>({items.length})</span>
+    )
+  }
+  
 
   const renderDesktopNav = () => {
     return (
@@ -22,7 +31,7 @@ const Nav = () => {
           return (
             <li key={ to }>
               <Link to={ to } className={ className }>
-                <span>{label}</span>
+                <span>{label} {to === PATHS.cart && renderCartCount()}</span>
               </Link>
             </li>
           )
@@ -44,7 +53,7 @@ const Nav = () => {
           return (
             <MenuItem key={ to }>
               <Link to={ to } className={ className }>
-                {label}
+                {label} {to === PATHS.cart && renderCartCount()}
               </Link>
             </MenuItem>
           )

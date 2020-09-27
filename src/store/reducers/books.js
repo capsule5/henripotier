@@ -1,6 +1,5 @@
 import { callApi } from 'Store/helpers'
 
-const BASE_ENDPOINT = 'books'
 const actionTypes = {
   FETCH_BOOKS_REQUEST: 'FETCH_BOOKS_REQUEST',
   FETCH_BOOKS_SUCCESS: 'FETCH_BOOKS_SUCCESS',
@@ -51,7 +50,7 @@ const fetch = async (dispatch) => {
   dispatch({ type: actionTypes.FETCH_BOOKS_REQUEST })
   const params = {
     method: 'GET',
-    endpoint: `${BASE_ENDPOINT}`,
+    endpoint: 'books',
   }
   const { response, error } = await callApi(params)
   if (response) {

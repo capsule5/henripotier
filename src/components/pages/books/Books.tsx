@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStore } from 'Store'
+import { useStore } from 'Store/index'
 import BooksList from 'Cmp/pages/_shared/booksList/BooksList.tsx'
 import { Helmet } from 'react-helmet'
 import { getBooksFmt } from 'Store/selectors/books'

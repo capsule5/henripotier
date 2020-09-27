@@ -4,7 +4,7 @@ module.exports = {
   Src: path.resolve('./src'),
   Assets: path.resolve('./src/assets'),
   Cmp: path.resolve('./src/components'),
-  Shared: path.resolve('./src/components/pages/shared'),
+  Shared: path.resolve('./src/components/pages/_shared'),
   Store: path.resolve('./src/store'),
   Utils: path.resolve('./src/utils'),
 }

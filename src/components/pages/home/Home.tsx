@@ -3,14 +3,14 @@ import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
 import { PATHS } from 'Src/config/nav'
 import BooksList from 'Cmp/pages/_shared/booksList/BooksList.tsx'
-import { useStore } from 'Store'
-import { getBooksFmt } from 'Store/selectors/books'
+import { useStore } from 'Store/index'
+import { getLatestBooks } from 'Store/selectors/books'
 import styles from './Home.module.scss'
 
 
 const Home = () => {
   const [ { books } ] = useStore()
-  const booksFmt = getBooksFmt(books)
+  const latestBooks = getLatestBooks(4)(books)
 
   return (
     <>
@@ -35,7 +35,7 @@ const Home = () => {
       </div>
       <section>
         <h2 className="first">Les derniers livres</h2>
-        <BooksList books={ booksFmt } />
+        <BooksList books={ latestBooks } />
       </section>
     </>
   )

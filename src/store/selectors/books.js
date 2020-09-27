@@ -16,9 +16,13 @@ export const getBooksFmt = createSelector(
   }),
 )
 
+export const getLatestBooks = defaultMemoize((count) => createSelector(
+  getBooksFmt,
+  (books) => books.slice(count - 1),
+))
+
 export const getBookBySlug = defaultMemoize((slug) => createSelector(
   getBooksFmt,
   (books) => books.find((p) => slugify(p.title) === slug) || {},
 ))
-
 

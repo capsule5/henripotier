@@ -1,0 +1,57 @@
+@import '~Assets/styles/variables';
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 2px solid $grey-lighter;
+
+  &:last-child {
+    border-bottom: 2px solid #000;
+  }
+
+  div {
+    padding-left: 10px;
+  }
+}
+
+.title {
+  overflow: hidden;
+  flex: 1;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.qty {
+  display: inline-block;
+}
+
+.subtotal {
+  white-space: nowrap;
+}
+
+.cover {
+  max-height: 50px;
+  padding-right: 10px;
+}
+
+.sum {
+  padding-top: 10px;
+  text-align: right;
+}
+
+.total {
+  font-size: 1.5em;
+}
+
+.discount {
+  color: $primary;
+  font-family: $font-bold;
+  font-size: 1.5em;
+}
+
+.totalAD {
+  font-family: $font-bold;
+  font-size: 2em;
+}
