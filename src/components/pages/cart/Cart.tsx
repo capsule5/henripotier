@@ -35,7 +35,6 @@ const Cart : React.FC = () => {
             totalADFmt={ totalADFmt }
           />
         </Grid>
-        <Grid md={ 6 } xs={ 12 } item />
       </Grid>
      
     </section>

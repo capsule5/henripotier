@@ -1,21 +1,31 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import { StateProvider } from 'Store'
 import { initialState, reducer } from 'Src/store/reducers'
-import { BrowserRouter } from 'react-router-dom'
+import { Router } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
+import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import App from './App'
 
 
-it('renders without crashing', () => {
-  const root = document.createElement('div')
-  ReactDOM.render(
-    <BrowserRouter>
+test('full app rendering/navigating', () => {
+  const history = createBrowserHistory()
+  render(
+    <Router history={ history }>
       <StateProvider initialState={ initialState } reducer={ reducer }>
         <App />
       </StateProvider>
-    </BrowserRouter>,
-    root,
+    </Router>,
   )
-  expect(root.querySelector('.site')).toBeTruthy()
-  ReactDOM.unmountComponentAtNode(root)
+
+  expect(screen.getByText(/Les derniers livres/i)).toBeInTheDocument()
+
+  userEvent.click(screen.getByText(/Mon panier/i))
+  expect(screen.getByText(/votre panier est vide/i)).toBeInTheDocument()
+
+  userEvent.click(screen.getByText(/Découvrez les livres/i))
+  expect(screen.getByText(/La bibliothèque fantastique/i)).toBeInTheDocument()
+
+  history.push('/some/bad/route')
+  expect(screen.getByText(/404/i)).toBeInTheDocument()
 })

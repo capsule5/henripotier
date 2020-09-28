@@ -16,10 +16,7 @@ import './index.scss'
 const theme = createMuiTheme(THEME.mui)
 
 const renderApp = () => {
-  // set history and router's root path
-  const history = createBrowserHistory({
-    basename: '/',
-  })
+  const history = createBrowserHistory()
   return (
     <Router history={ history } basename="/">
       <ScrollToTop>
