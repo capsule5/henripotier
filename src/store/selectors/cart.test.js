@@ -57,6 +57,7 @@ describe('getBestOffer', () => {
         { type: 'slice', sliceValue: 100, value: 12 },
       ],
     }
+  
     const expected = { type: 'minus', value: 15, discountFmt: `- ${euro(15)}` }
     expect(getBestOffer(cartStateWithOffers)).toEqual(expected)
   })
@@ -74,6 +75,8 @@ describe('getBestOffer', () => {
         { type: 'slice', sliceValue: 100, value: 12 },
       ],
     }
+
+    // Total 225 has 2 slices of 100, discount = 12 * 2
     const expected = { type: 'sliceOfferCalculated', value: 24, discountFmt: `- ${euro(24)}` }
     expect(getBestOffer(cartStateWithOffers)).toEqual(expected)
   })
