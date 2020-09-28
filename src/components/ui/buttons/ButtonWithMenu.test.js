@@ -25,7 +25,7 @@ it('opens menu on button click', () => {
   button.simulate('click')
   expect(
     wrapper
-      .update() // update needed since setState is async
+      .update()
       .find('WithStyles(ForwardRef(Menu))')
       .props().open,
   ).toEqual(true)

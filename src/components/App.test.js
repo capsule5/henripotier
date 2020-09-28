@@ -7,14 +7,15 @@ import App from './App'
 
 
 it('renders without crashing', () => {
-  const div = document.createElement('div')
+  const root = document.createElement('div')
   ReactDOM.render(
     <BrowserRouter>
       <StateProvider initialState={ initialState } reducer={ reducer }>
         <App />
       </StateProvider>
     </BrowserRouter>,
-    div,
+    root,
   )
-  ReactDOM.unmountComponentAtNode(div)
+  expect(root.querySelector('.site')).toBeTruthy()
+  ReactDOM.unmountComponentAtNode(root)
 })

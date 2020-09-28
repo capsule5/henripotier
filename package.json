@@ -27,6 +27,8 @@
     "css-loader": "3.4.2",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
     "eslint": "^7.9.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-react-app": "^5.2.1",
@@ -110,7 +112,9 @@
       "!src/**/*.d.ts"
     ],
     "setupFiles": [
-      "react-app-polyfill/jsdom"
+      "react-app-polyfill/jsdom",
+      "<rootDir>/jest.init.js",
+      "<rootDir>/src/utils/setupTests.js"
     ],
     "setupFilesAfterEnv": [
       "<rootDir>/src/setupTests.ts"
@@ -132,7 +136,13 @@
     "modulePaths": [],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
-      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
+      "^Src(.*)$": "<rootDir>/src$1",
+      "^Assets(.*)$": "<rootDir>/src/assets$1",
+      "^Cmp(.*)$": "<rootDir>/src/components$1",
+      "^Shared(.*)$": "<rootDir>/src/components/pages/shared$1",
+      "^Store(.*)$": "<rootDir>/src/store$1",
+      "^Utils(.*)$": "<rootDir>/src/utils$1"
     },
     "moduleFileExtensions": [
       "web.js",
