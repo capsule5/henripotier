@@ -4,7 +4,7 @@ import { isWidthUp } from '@material-ui/core/withWidth'
 import { LINKS, PATHS } from 'Src/config/nav'
 import ButtonWithMenu from 'Cmp/ui/buttons/ButtonWithMenu'
 import MenuItem from '@material-ui/core/MenuItem'
-import { useMuiWidth } from 'Src/hooks/useMuiWidth'
+import { useMuiWidth } from 'Src/hooks'
 import { useStore } from 'Store/index'
 import styles from './Nav.module.scss'
 

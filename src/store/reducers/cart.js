@@ -36,8 +36,6 @@ export const reducer = (state, action) => {
         offers: [],
       }
     case actionTypes.GET_OFFERS_SUCCESS:
-      console.log({ offers: payload.offers })
-    
       return {
         ...state,
         isLoading: false,

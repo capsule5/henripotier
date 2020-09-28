@@ -1,4 +1,3 @@
-// TODO:  tests
 // TODO:  clean unused ui
 // TODO:  cart local storage
 

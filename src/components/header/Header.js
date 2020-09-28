@@ -4,7 +4,7 @@ import Nav from 'Cmp/header/nav/Nav.js'
 import { Link } from 'react-router-dom'
 import { PATHS } from 'Src/config/nav'
 import { isWidthUp, isWidthDown } from '@material-ui/core/withWidth'
-import { useMuiWidth } from 'Src/hooks/useMuiWidth'
+import { useMuiWidth } from 'Src/hooks'
 import styles from './Header.module.scss'
 
 const Header = () => {
