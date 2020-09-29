@@ -31,7 +31,12 @@ const Books:React.FC = () => {
         <div className={ styles.searchWrapper }>
           <Search books={ booksFmt } onSearch={ onSearch } />
         </div>
-        <BooksList books={ booksFiltered } />
+        {
+          booksFiltered.length
+            ? <BooksList books={ booksFiltered } />
+            : <div>Aucun livre ne correspond à votre recherche</div>
+        }
+        
       </section>
     </>
   )
