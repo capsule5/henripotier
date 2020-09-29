@@ -48,8 +48,13 @@ const CartBox : React.FC<Props> = ({
     return (
       <div className={ styles.sum }>
         <div className={ `${styles.total}` }>{totalFmt}</div>
-        <div className={ `${styles.discount}` }>{discountFmt}</div>
-        <div className={ `${styles.totalAD}` }>{totalADFmt}</div>
+        {totalFmt !== totalADFmt && (
+        <>
+          <div className={ `${styles.discount}` }>{discountFmt}</div>
+          <div className={ `${styles.totalAD}` }>{totalADFmt}</div>
+        </>
+        )}
+        
       </div>
     )
   }
