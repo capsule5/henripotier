@@ -1,0 +1,29 @@
+@import '~Assets/styles/variables';
+
+.Search {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid $grey;
+
+  &:focus {
+    border: 1px solid $grey;
+    outline: none;
+  }
+
+  @media (min-width: $screen-sm) {
+    // large mobile
+  }
+
+  @media (min-width: $screen-md) {
+    // tablet
+    width: 500px;
+  }
+
+  @media (min-width: $screen-lg) {
+    // desktop
+  }
+
+  @media (min-width: $screen-xl) {
+    // large desktop
+  }
+}

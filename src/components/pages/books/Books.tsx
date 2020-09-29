@@ -1,13 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useStore } from 'Store/index'
 import BooksList from 'Cmp/pages/_shared/booksList/BooksList.tsx'
 import { Helmet } from 'react-helmet'
 import { getBooksFmt } from 'Store/selectors/books'
+import { Book } from 'Src/types'
 import styles from './Books.module.scss'
+import Search from './search/Search'
 
-const Books = () => {
+const Books:React.FC = () => {
   const [ { books } ] = useStore()
+  const [ booksFiltered, setBooksFiltered ] = useState([])
   const booksFmt = getBooksFmt(books)
+  
+  useEffect(() => {
+    setBooksFiltered(booksFmt)
+  }, [ books ])
+
+  const onSearch = (res:Book[]) => {
+    setBooksFiltered(res)
+  }
+
   return (
     <>
       <Helmet>
@@ -16,7 +28,10 @@ const Books = () => {
       </Helmet>
       <section className={ styles.Books }>
         <h1>La bibliothèque fantastique</h1>
-        <BooksList books={ booksFmt } />
+        <div className={ styles.searchWrapper }>
+          <Search books={ booksFmt } onSearch={ onSearch } />
+        </div>
+        <BooksList books={ booksFiltered } />
       </section>
     </>
   )
