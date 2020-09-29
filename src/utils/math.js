@@ -15,12 +15,6 @@ export const polarToCartesian = ({ perc, halfsize, radius }) => {
   return { x, y }
 }
 
-// export const getDiffPerc = (val1, val2) => {
-//   const absDiff = Math.abs(val1 - val2)
-//   const average = (val1 + val2) / 2
-//   return absDiff / average * 100
-// }
-
 export const getDiffPerc = (val1, val2) => {
   const max = Math.max(val1, val2)
   const min = Math.min(val1, val2)
