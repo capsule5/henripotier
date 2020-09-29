@@ -24,7 +24,7 @@ const AddToCartBtn: React.FC<Props> = ({
   }
 
   if (isSmall) {
-    return <button onClick={ add }>+</button>
+    return <button onClick={ add } data-test-id="add">+</button>
   }
 
   return (

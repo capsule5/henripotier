@@ -1,6 +1,6 @@
 import { callApi } from 'Store/helpers'
 
-const actionTypes = {
+export const actionTypes = {
   ADD: 'ADD',
   REMOVE: 'REMOVE',
   GET_OFFERS_REQUEST: 'GET_OFFERS_REQUEST',

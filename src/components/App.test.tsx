@@ -1,5 +1,5 @@
 import React from 'react'
-import { StateProvider } from 'Store'
+import { StateProvider } from 'Store/index'
 import { initialState, reducer } from 'Src/store/reducers'
 import { Router } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
@@ -29,3 +29,5 @@ test('full app rendering/navigating', () => {
   history.push('/some/bad/route')
   expect(screen.getByText(/404/i)).toBeInTheDocument()
 })
+
+

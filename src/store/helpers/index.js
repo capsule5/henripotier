@@ -11,7 +11,7 @@ export const callApi = ({
     ...config,
   })
     .then((response) => {
-      console.log('API success', method, endpoint, response)
+      // console.log('API success', method, endpoint, response)
       return { response }
     })
     .catch((error) => {

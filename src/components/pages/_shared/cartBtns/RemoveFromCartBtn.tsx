@@ -15,7 +15,7 @@ const RemoveFromCartBtn: React.FC<Props> = ({
     cartActions.remove(dispatch, { items, isbn })
   }
 
-  return <button onClick={ remove } className={ className }>-</button>
+  return <button onClick={ remove } className={ className } data-test-id="remove">-</button>
 }
 
 export default RemoveFromCartBtn
